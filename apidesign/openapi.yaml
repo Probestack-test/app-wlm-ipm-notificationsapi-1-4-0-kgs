@@ -1,0 +1,95 @@
+openapi: 3.0.3
+info:
+  title: notificationsapi-1-4-0
+  version: 1.0.0
+  description: Operational baseline generated from observed Kong Konnect configuration.
+servers:
+- url: https://notificationsapi-1-4-0-upstream:80
+paths:
+  /internal/notifications/1.4.0/email:
+    post:
+      operationId: postInternalNotifications140Email_8613bdaf
+      summary: notificationsapi-1-4-0--postemail
+      description: Inferred from Kong routing. Request and response business schemas are not observable.
+      x-kong-route-ids:
+      - b6688e84-df90-40d1-ac0f-1a9682950fde
+      x-kong-plugin-summary:
+      - acl
+      - jwt
+      - rate-limiting
+      - request-transformer
+      responses:
+        default:
+          description: Runtime response semantics are not observable from Kong configuration.
+  /internal/notifications/1.4.0/push:
+    post:
+      operationId: postInternalNotifications140Push_24831e89
+      summary: notificationsapi-1-4-0--postpush
+      description: Inferred from Kong routing. Request and response business schemas are not observable.
+      x-kong-route-ids:
+      - 603e4ce3-3225-4671-9079-68ab75dea296
+      x-kong-plugin-summary:
+      - acl
+      - jwt
+      - rate-limiting
+      - request-transformer
+      responses:
+        default:
+          description: Runtime response semantics are not observable from Kong configuration.
+  /internal/notifications/1.4.0/sms:
+    post:
+      operationId: postInternalNotifications140Sms_4a06d9e3
+      summary: notificationsapi-1-4-0--postsms
+      description: Inferred from Kong routing. Request and response business schemas are not observable.
+      x-kong-route-ids:
+      - 484a7db7-1721-4503-87a5-8b380cd9ff33
+      x-kong-plugin-summary:
+      - acl
+      - jwt
+      - rate-limiting
+      - request-transformer
+      responses:
+        default:
+          description: Runtime response semantics are not observable from Kong configuration.
+  /internal/notifications/1.4.0/templates:
+    get:
+      operationId: getInternalNotifications140Templates_cd739be5
+      summary: notificationsapi-1-4-0--gettemplates
+      description: Inferred from Kong routing. Request and response business schemas are not observable.
+      x-kong-route-ids:
+      - d448a732-75ef-4585-bb37-49d6546d5040
+      x-kong-plugin-summary:
+      - acl
+      - jwt
+      - rate-limiting
+      - request-transformer
+      responses:
+        default:
+          description: Runtime response semantics are not observable from Kong configuration.
+    post:
+      operationId: postInternalNotifications140Templates_2c75d131
+      summary: notificationsapi-1-4-0--posttemplates
+      description: Inferred from Kong routing. Request and response business schemas are not observable.
+      x-kong-route-ids:
+      - 2e9f3ad9-27db-4b30-87a1-202b14c5dc3a
+      x-kong-plugin-summary:
+      - acl
+      - jwt
+      - rate-limiting
+      - request-transformer
+      responses:
+        default:
+          description: Runtime response semantics are not observable from Kong configuration.
+x-kong-source:
+  serviceId: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+  snapshotFingerprint: 07cea5136085320a7d1a760a482942009d20bec1206588859bbf39aee15301c0
+  controlPlaneId: edb363b5-777a-445c-a190-5ca0d53c0c12
+x-kong-unmapped-routes:
+- routeId: 87f02ccd-15ec-4311-8a9d-55cdf64c8416
+  routeName: notificationsapi-1-4-0--getmessages-messageid
+  reasons:
+  - REGEX_OR_UNSUPPORTED_PATH
+- routeId: f0d00696-eb3c-4ea9-9644-5f1e4718e6e8
+  routeName: notificationsapi-1-4-0--puttemplates-templateid
+  reasons:
+  - REGEX_OR_UNSUPPORTED_PATH

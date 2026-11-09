@@ -1,0 +1,31 @@
+name: Kong Konnect Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  kong-deploy:
+    uses: ForgeCrux/pipeline-template/.github/workflows/kong-v1.yaml@main
+    permissions:
+      contents: read
+      id-token: write
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      APP_ID: ${{ secrets.APP_ID }}
+      APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
+      PROB_SERVICE_TOKEN_URL: ${{ secrets.PROB_SERVICE_TOKEN_URL }}
+      PROB_SERVICE_TOKEN_CLIENT_ID: ${{ secrets.PROB_SERVICE_TOKEN_CLIENT_ID }}
+      PROB_SERVICE_TOKEN_CLIENT_SECRET: ${{ secrets.PROB_SERVICE_TOKEN_CLIENT_SECRET }}
+      PROB_SERVICE_TOKEN_TENANT_ID: ${{ secrets.PROB_SERVICE_TOKEN_TENANT_ID }}
+      cicd_profile_id: ${{ secrets.CICD_PROFILE_ID }}
+      FLOW_CHANGE_ID: ${{ secrets.FLOW_CHANGE_ID }}
+      RESOURCE_ID: ${{ secrets.RESOURCE_ID }}
+      FLOW_TYPE: ${{ secrets.FLOW_TYPE }}
+    with:
+      kong_config_path: kong/kong.yaml
+      control_plane_name: ${{ vars.KONG_CONTROL_PLANE_NAME }}
+      deploy_proxy: kong
+      validate_only: true
+      deck_mode: apply
+      select_tag: migrated-by:forgesphere-kong-migration
+      branch_name: ${{ github.ref_name }}
