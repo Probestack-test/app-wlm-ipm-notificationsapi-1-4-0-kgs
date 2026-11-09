@@ -1,0 +1,997 @@
+_format_version: '3.0'
+_transform: true
+services:
+- connect_timeout: 60000
+  created_at: 1789395914
+  enabled: true
+  host: notificationsapi-1-4-0-upstream
+  id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+  name: notificationsapi-1-4-0
+  port: 80
+  protocol: https
+  read_timeout: 60000
+  retries: 5
+  source: KONG_KONNECT
+  tags:
+  - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+  - migrated-by:forgeshift-wso2-migrator
+  - sms
+  - email
+  - notifications
+  - platform
+  - push
+  updated_at: 1789395914
+  write_timeout: 60000
+  routes:
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: 2e9f3ad9-27db-4b30-87a1-202b14c5dc3a
+    methods:
+    - POST
+    name: notificationsapi-1-4-0--posttemplates
+    path_handling: v0
+    paths:
+    - /internal/notifications/1.4.0/templates
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_templates
+    - wso2-verb:POST
+    updated_at: 1789395914
+    plugins:
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /templates
+      created_at: 1789395914
+      enabled: true
+      id: c5b4cd82-a45c-4a48-a6e7-391d897b4820
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 2e9f3ad9-27db-4b30-87a1-202b14c5dc3a
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: fb2fd6d4-c18f-4493-ab87-d12aacf7fb67
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 2e9f3ad9-27db-4b30-87a1-202b14c5dc3a
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: 484a7db7-1721-4503-87a5-8b380cd9ff33
+    methods:
+    - POST
+    name: notificationsapi-1-4-0--postsms
+    path_handling: v0
+    paths:
+    - /internal/notifications/1.4.0/sms
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_sms
+    - wso2-verb:POST
+    updated_at: 1789395914
+    plugins:
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: 3bf5cf8e-93cd-47b3-ac5f-3b4e01cbb662
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 484a7db7-1721-4503-87a5-8b380cd9ff33
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /sms
+      created_at: 1789395914
+      enabled: true
+      id: 65e89ddd-6f2f-4ce7-8d24-3fd7e3c55042
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 484a7db7-1721-4503-87a5-8b380cd9ff33
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: 603e4ce3-3225-4671-9079-68ab75dea296
+    methods:
+    - POST
+    name: notificationsapi-1-4-0--postpush
+    path_handling: v0
+    paths:
+    - /internal/notifications/1.4.0/push
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_push
+    - wso2-verb:POST
+    updated_at: 1789395914
+    plugins:
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /push
+      created_at: 1789395914
+      enabled: true
+      id: a4463e4d-8577-46c0-80ac-4cbd360ece0b
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 603e4ce3-3225-4671-9079-68ab75dea296
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: b91b306d-161b-4735-9742-f851073d64ee
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 603e4ce3-3225-4671-9079-68ab75dea296
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: 87f02ccd-15ec-4311-8a9d-55cdf64c8416
+    methods:
+    - GET
+    name: notificationsapi-1-4-0--getmessages-messageid
+    path_handling: v0
+    paths:
+    - ~/internal/notifications/1\.4\.0/messages/(?<messageId>[^/]+)$
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_messages_{messageId}
+    - wso2-verb:GET
+    updated_at: 1789395914
+    plugins:
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: 4dd6fe7e-7122-4414-8ea0-6d09ea168a18
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 87f02ccd-15ec-4311-8a9d-55cdf64c8416
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /messages/$(uri_captures.messageId)
+      created_at: 1789395914
+      enabled: true
+      id: d31c9f80-74f5-4224-a08e-bc81e6a7c9bd
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: 87f02ccd-15ec-4311-8a9d-55cdf64c8416
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: b6688e84-df90-40d1-ac0f-1a9682950fde
+    methods:
+    - POST
+    name: notificationsapi-1-4-0--postemail
+    path_handling: v0
+    paths:
+    - /internal/notifications/1.4.0/email
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_email
+    - wso2-verb:POST
+    updated_at: 1789395914
+    plugins:
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /email
+      created_at: 1789395914
+      enabled: true
+      id: 0eafeac4-0889-4854-8bd9-cd7c35d56b1c
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: b6688e84-df90-40d1-ac0f-1a9682950fde
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: 15cc678b-3fcf-4508-8532-6f60e15b81f8
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: b6688e84-df90-40d1-ac0f-1a9682950fde
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: d448a732-75ef-4585-bb37-49d6546d5040
+    methods:
+    - GET
+    name: notificationsapi-1-4-0--gettemplates
+    path_handling: v0
+    paths:
+    - /internal/notifications/1.4.0/templates
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_templates
+    - wso2-verb:GET
+    updated_at: 1789395914
+    plugins:
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /templates
+      created_at: 1789395914
+      enabled: true
+      id: 6dffe977-07f8-49f9-81a0-a67ff4353786
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: d448a732-75ef-4585-bb37-49d6546d5040
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: 7444f76b-a123-4926-aed4-2e76b2f0e2e4
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: d448a732-75ef-4585-bb37-49d6546d5040
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  - created_at: 1789395914
+    https_redirect_status_code: 426
+    id: f0d00696-eb3c-4ea9-9644-5f1e4718e6e8
+    methods:
+    - PUT
+    name: notificationsapi-1-4-0--puttemplates-templateid
+    path_handling: v0
+    paths:
+    - ~/internal/notifications/1\.4\.0/templates/(?<templateId>[^/]+)$
+    preserve_host: false
+    protocols:
+    - https
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    strip_path: false
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-resource:_templates_{templateId}
+    - wso2-verb:PUT
+    updated_at: 1789395914
+    plugins:
+    - config:
+        add:
+          body: []
+          headers: []
+          querystring: []
+        append:
+          body: []
+          headers: []
+          querystring: []
+        remove:
+          body: []
+          headers: []
+          querystring: []
+        rename:
+          body: []
+          headers: []
+          querystring: []
+        replace:
+          body: []
+          headers: []
+          querystring: []
+          uri: /templates/$(uri_captures.templateId)
+      created_at: 1789395914
+      enabled: true
+      id: 6326fd57-96fa-42c5-a89d-996710f6566a
+      name: request-transformer
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: f0d00696-eb3c-4ea9-9644-5f1e4718e6e8
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+    - config:
+        allow:
+        - wso2-api:8b8a31f3-4274-425a-b219-9247e6176b95
+        always_use_authenticated_groups: false
+        hide_groups_header: true
+        include_consumer_groups: false
+      created_at: 1789395914
+      enabled: true
+      id: 644523e1-0009-4484-beb3-ead0ea325397
+      name: acl
+      protocols:
+      - grpc
+      - grpcs
+      - http
+      - https
+      route:
+        id: f0d00696-eb3c-4ea9-9644-5f1e4718e6e8
+      source: KONG_KONNECT
+      tags:
+      - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+      - migrated-by:forgeshift-wso2-migrator
+      - sms
+      - email
+      - notifications
+      - platform
+      - push
+      updated_at: 1789395914
+  plugins:
+  - config:
+      claims_to_verify:
+      - exp
+      cookie_names: []
+      header_names:
+      - authorization
+      key_claim_name: azp
+      maximum_expiration: 0
+      run_on_preflight: true
+      uri_param_names:
+      - jwt
+    created_at: 1789395914
+    enabled: true
+    id: 8ed92e70-f95a-42f4-9050-58d5f219485d
+    name: jwt
+    protocols:
+    - grpc
+    - grpcs
+    - http
+    - https
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    updated_at: 1789395914
+  - config:
+      error_code: 429
+      error_message: API rate limit exceeded
+      fault_tolerant: true
+      hide_client_headers: false
+      limit_by: consumer
+      minute: 100000
+      policy: local
+      redis:
+        database: 0
+        port: 6379
+        ssl: false
+        ssl_verify: false
+        timeout: 2000
+      redis_database: 0
+      redis_port: 6379
+      redis_ssl: false
+      redis_ssl_verify: false
+      redis_timeout: 2000
+      sync_rate: -1
+    created_at: 1789395914
+    enabled: true
+    id: d4987e8a-da08-47f5-ae5f-838098781a8a
+    name: rate-limiting
+    protocols:
+    - grpc
+    - grpcs
+    - http
+    - https
+    service:
+      id: 06498bfc-a4cd-456a-b52c-29e5b8b5b9b5
+    source: KONG_KONNECT
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    - wso2-tier:AldermoorInternal
+    updated_at: 1789395914
+plugins:
+- config:
+    access:
+    - |
+      -- Apigee path rewrite (apigee-kong-migrator)
+      local route        = kong.router.get_route()
+      local service      = kong.router.get_service()
+      local service_path = (service and service.path) or "/"
+      -- Check for apigee-strip-len tag set on suffix routes during migration
+      local strip_len = nil
+      if route and route.tags then
+        for _, tag in ipairs(route.tags) do
+          if tag:sub(1, 17) == "apigee-strip-len:" then
+            strip_len = tonumber(tag:sub(18))
+            break
+          end
+        end
+      end
+      -- Fall back to route path length if no tag (covers normal routes)
+      if not strip_len then
+        local route_path = (route and route.paths and route.paths[1]) or "/"
+        if route_path:sub(1, 1) == "~" then route_path = route_path:sub(2) end
+        strip_len = #route_path
+      end
+      local incoming = kong.request.get_path()
+      local suffix = "/"
+      if #incoming >= strip_len then
+        suffix = incoming:sub(strip_len + 1)
+      end
+      if suffix == "" then suffix = "/" end
+      local clean_target = service_path:gsub("/+$", "")
+      if suffix:sub(1, 1) ~= "/" then suffix = "/" .. suffix end
+      kong.service.request.set_path(clean_target .. suffix)
+    body_filter: []
+    certificate: []
+    functions: []
+    header_filter: []
+    log: []
+    rewrite: []
+    ws_client_frame: []
+    ws_close: []
+    ws_handshake: []
+    ws_upstream_frame: []
+  created_at: 1790076421
+  enabled: true
+  id: 3ca01165-5e1c-4f82-adba-16cf9582a31f
+  name: pre-function
+  protocols:
+  - grpc
+  - grpcs
+  - http
+  - https
+  source: KONG_KONNECT
+  tags:
+  - global
+  - apigee-path-rewrite
+  updated_at: 1790938548
+upstreams:
+- algorithm: round-robin
+  created_at: 1789395914
+  hash_fallback: none
+  hash_on: none
+  hash_on_cookie_path: /
+  healthchecks:
+    active:
+      concurrency: 10
+      healthy:
+        http_statuses:
+        - 200
+        - 302
+        interval: 5
+        successes: 3
+      http_path: /health
+      https_verify_certificate: true
+      timeout: 1
+      type: http
+      unhealthy:
+        http_failures: 3
+        http_statuses:
+        - 429
+        - 404
+        - 500
+        - 501
+        - 502
+        - 503
+        - 504
+        - 505
+        interval: 5
+        tcp_failures: 0
+        timeouts: 0
+    passive:
+      healthy:
+        http_statuses:
+        - 200
+        - 201
+        - 202
+        - 203
+        - 204
+        - 205
+        - 206
+        - 207
+        - 208
+        - 226
+        - 300
+        - 301
+        - 302
+        - 303
+        - 304
+        - 305
+        - 306
+        - 307
+        - 308
+        successes: 5
+      type: http
+      unhealthy:
+        http_failures: 5
+        http_statuses:
+        - 429
+        - 500
+        - 503
+        tcp_failures: 0
+        timeouts: 0
+    threshold: 0
+  id: 1e7d1f23-3bb5-4cae-91a7-06d8ef0ee6b0
+  name: notificationsapi-1-4-0-upstream
+  slots: 10000
+  source: KONG_KONNECT
+  sticky_sessions_cookie_path: /
+  tags:
+  - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+  - migrated-by:forgeshift-wso2-migrator
+  - sms
+  - email
+  - notifications
+  - platform
+  - push
+  updated_at: 1793625553
+  use_srv_name: false
+  targets:
+  - created_at: 1789395914
+    failover: false
+    id: 9604920d-1ee0-4a83-8a3f-0b878f6efab8
+    source: KONG_KONNECT
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    target: notification-hub-1.svc.prod.aldermoor.example:443
+    updated_at: 1789395914
+    upstream:
+      id: 1e7d1f23-3bb5-4cae-91a7-06d8ef0ee6b0
+    weight: 100
+  - created_at: 1789395914
+    failover: false
+    id: acbb4307-b713-470f-9cbd-c4d688cb3492
+    source: KONG_KONNECT
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    target: notification-hub-2.svc.prod.aldermoor.example:443
+    updated_at: 1789395914
+    upstream:
+      id: 1e7d1f23-3bb5-4cae-91a7-06d8ef0ee6b0
+    weight: 100
+  - created_at: 1789395914
+    failover: false
+    id: b11e7045-e55d-4438-a8e1-6e6aa7254ec7
+    source: KONG_KONNECT
+    tags:
+    - wso2-source-id:8b8a31f3-4274-425a-b219-9247e6176b95
+    - migrated-by:forgeshift-wso2-migrator
+    - sms
+    - email
+    - notifications
+    - platform
+    - push
+    target: notification-hub-3.svc.prod.aldermoor.example:443
+    updated_at: 1789395914
+    upstream:
+      id: 1e7d1f23-3bb5-4cae-91a7-06d8ef0ee6b0
+    weight: 100
